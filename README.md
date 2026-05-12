@@ -513,9 +513,14 @@ db.orders.aggregate([
 
 ```javascript
 db.users.createIndex({ email: 1 }, { unique: true });
+db.users.createIndex({ city: 1 });
+
 db.products.createIndex({ category: 1 });
+db.products.createIndex({ price: 1 });
+
 db.orders.createIndex({ user_id: 1 });
 db.orders.createIndex({ status: 1 });
+db.orders.createIndex({ status: 1, total: -1 });
 ```
 
 Проверка индексов:
@@ -647,4 +652,3 @@ explain("executionStats")
 
 Без индекса MongoDB выполняет полный просмотр коллекции `COLLSCAN`.
 
-Таким образом, задание выполнено полностью.
