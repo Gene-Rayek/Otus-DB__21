@@ -32,7 +32,7 @@ MongoDB развернута в Docker с помощью `docker compose`.
 
 Создана база данных:
 
-```text
+```
 otus
 ```
 
@@ -50,20 +50,6 @@ orders
 init/init.js
 ```
 
----
-
-# Структура проекта
-
-```text
-otus-mongodb/
-├── docker-compose.yml
-├── init/
-│   └── init.js
-├── README.md
-└── .gitignore
-```
-
----
 
 # 1. Docker Compose
 
@@ -88,8 +74,6 @@ services:
 volumes:
   mongo_data:
 ```
-
----
 
 # 2. Файл инициализации базы
 
@@ -193,20 +177,6 @@ db.orders.createIndex({ status: 1 });
 docker compose up -d
 ```
 
-Проверка контейнера:
-
-```bash
-docker ps
-```
-
-Ожидаемый результат:
-
-```text
-otus-mongodb
-```
-
----
-
 # 4. Подключение к MongoDB
 
 Подключение к MongoDB:
@@ -227,13 +197,10 @@ use otus
 show collections
 ```
 
-Ожидаемый результат:
+результат:
 
-```text
-orders
-products
-users
-```
+<img width="370" height="86" alt="1" src="https://github.com/user-attachments/assets/4588696d-cea7-4a2f-94f3-d90e1f245f93" />
+
 
 ---
 
@@ -257,13 +224,10 @@ db.products.countDocuments()
 db.orders.countDocuments()
 ```
 
-Ожидаемый результат:
+результат:
 
-```text
-users: 3
-products: 3
-orders: 2
-```
+<img width="473" height="136" alt="2" src="https://github.com/user-attachments/assets/335b7809-7ba1-4fb8-9554-0c269277bc39" />
+
 
 Просмотр данных:
 
